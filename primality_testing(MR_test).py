@@ -32,7 +32,6 @@ def Miller_Rabin(n):
       b = (b**2)%n
   return("n is composite")
 
-
 print(Miller_Rabin(29))
 print(Miller_Rabin(565))
 print(Miller_Rabin(7433))
