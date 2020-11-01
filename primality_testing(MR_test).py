@@ -1,12 +1,15 @@
 import random
 
-def modulo(b,e,n):
-  i=1
-  a=b
-  while i<e:
-    a=(b*a)%n
-    i+=1
-  return a
+def square_multiply(x,c,n):
+  z=1
+  h = list(bin(c))
+  del(h[0],h[0])
+
+  for i in range(0,len(h)):
+    z = (z**2)%n
+    if int(h[i]) ==1:
+      z = (z*x)%n
+  return(z)
 
 def Miller_Rabin(n):
   a = random.randint(1,n)
@@ -20,7 +23,7 @@ def Miller_Rabin(n):
     m = n-1
     k = 0
 
-  b = modulo(a,m,n)
+  b = square_multiply(a,m,n)
 
   if b%n == 1:
     return("n is prime")
@@ -32,10 +35,11 @@ def Miller_Rabin(n):
       b = (b**2)%n
   return("n is composite")
 
-
 print(Miller_Rabin(29))
 print(Miller_Rabin(565))
-print(Miller_Rabin(7433))
+print(Miller_Rabin(7433*7919*2649743145))
+print(Miller_Rabin(1161163))
+print(Miller_Rabin(1178121127*7433*7919*2649743145))
 
 
 
