@@ -7,7 +7,7 @@ the first member of the sequence that is not 1 is also not -1
 then n is not prime.
 If n fails the Miller-Rabin test with a sequence starting with 1,
 then we have a nontrivial square root of 1 modulo n,
-and we can efficiently factor n.                         '''
+and we can efficiently factor n.                        '''
 
 
 
