@@ -1,13 +1,18 @@
 ''' Miller Rabin - a short note 
 
+The Miller-Rabin takes a number n, and determines if it is prime or not.
+n is prime iff the solutions are of x^2 =1(mod n),i.e., x = 1 or -1.
+We then take largest 'k' such that (n-1)=2^k * m, where m is odd.
+
 The Miller-Rabin test picks a random integer 'a' 
 which belongs to modulo class of n. 
-If the above sequence does not begin with 1, or 
+If the sequence with preceeding values of k, does not begin with 1, or 
 the first member of the sequence that is not 1 is also not -1
 then n is not prime.
+
 If n fails the Miller-Rabin test with a sequence starting with 1,
 then we have a nontrivial square root of 1 modulo n,
-and we can efficiently factor n.                        '''
+and we can efficiently factor n.                         '''
 
 
 
